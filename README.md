@@ -29,10 +29,11 @@ The project used crack surface from https://www.kaggle.com/datasets/snap/amazon-
 - **PySpark**
 
 ## Key Features
-### Data Imputation
-### Exploratory Data Analysis (EDA)
-### Text Processing: Tokenizer, StopWordsRemover, HashingTF, and Inverse Document Frequency
-### Model Development
+- Data Imputation
+- Exploratory Data Analysis (EDA)
+- Text Processing: Tokenizer, StopWordsRemover, HashingTF, and Inverse Document Frequency
+
+### Model used
 - Naive Bayes
 - Logistic Regression
 - Decision Tree
