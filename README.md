@@ -1,45 +1,81 @@
 # Sentimentanalysis
 # Concretecrackdetection
 ## Overview
-<p></p>
+<p>This project centers on sentiment analysis of the "Amazon Fine Food Reviews" dataset, a vast
+collection of reviews for fine foods on Amazon spanning a decade, from October 1999 to October
+2012. This dataset comprises roughly 568,454 reviews contributed by 256,059 users for 74,258
+distinct food products. The project's primary objective is to ascertain the sentiment (positive or
+negative) expressed in these reviews. The project will establish a distributed computing
+environment for managing big data and machine learning workloads using Hadoop and Spark. <b>Note: </b> This project runs on Google Cloud Platform installing Hadoop, Spark, and Jupyter notebook</p>
 
-## How to Run the Project ##
-The project used crack surface from https://www.kaggle.com/code/zeynel7/detection-of-surface-crack-using-cnn. The dataset contains concrete images of not having any cracks and having cracks. Each type of surface consists of 20000 positive and 20000 negative images  with 227 x 227 pixels with RGB channels.
+## How to Run the Project
+The project used crack surface from https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews/data. This dataset consists of reviews of fine foods from amazon. The data span a period of more than 10 years, including all ~500,000 reviews up to October 2012. Reviews include product and user information, ratings, and a plain text review. It also includes reviews from all other Amazon categories.
+**Data includes:**
+- Reviews from Oct 1999 - Oct 2012
+- 568,454 reviews
+- 256,059 users
+- 74,258 products
+- 260 users with > 50 reviews
 
 ### Prerequisites
 #### **1. Required Software**
 - **Python 3.x** ([Download Here](https://www.python.org/downloads/))
-- **TensorFlow & Keras** (For deep learning)
-- **OpenCV** (For image processing)
-- **scikit-learn** (For machine learning models)
-- **Matplotlib & Seaborn** (For data visualization)
-- **NumPy & Pandas** (For numerical and data manipulation)
-- **TQDM** (For progress bars)
-- **IPython** (For interactive shell)
-- **Glob** (For file handling)
+- **Google Cloud Platform**
+- **Apache Spark**
+- **Hadoop (HDFS)**
+- **Java 8 or later** (Required for Spark)
+- **Matplotlib & Seaborn**
+- **NumPy & Pandas**
+- **PySpark**
 
 ## Key Features
-### Image Processing
-Images were resized and converted into grayscale with (100x100 pixels) to enhance the model performance.
-<div align="center"><img width="300" alt="image" src="https://github.com/user-attachments/assets/fdef99a9-9910-48d8-ae71-b46875931be7" />
-</div>
-<div align="center"><b>Figure 1: </b>Samples of grayscale conversion</div>
-
-### Model Development 
-The MLP model was trained with fixed epoch (100) and different configurations like neurons with and without regularization(dropout), learning rate, and batch size to optimize the model.
-### Model Evaluation
-The project includes multiple metrics like accuracy, precision, recall, f1-score and others(ROC-curve and confusion matrix) to assess the model performance.
-#### - Accuracy: 96.38%
-#### - Precsion: 97.53
-#### - Recall: 95.13
-#### - F1-Score: 96.32
+### Data Imputation
+### Exploratory Data Analysis (EDA)
+### Text Processing: Tokenizer, StopWordsRemover, HashingTF, and Inverse Document Frequency
+### Model Development
+- Naive Bayes
+- Logistic Regression
+- Decision Tree
+- Random Forest
 
 ## Result
-<div align="center"><img width="300" alt="image" src="https://github.com/user-attachments/assets/f1b04e25-e07e-4ce5-81e8-f1941df14f22" />
 
+### Naive Bayes
+- Accuracy: 81.404
+- Precision: 82.72
+- Recall: 81.40
+- F1-score: 81.91
+- AUC: 84.39
+<div align="center"><img width="400" alt="image" src="https://github.com/user-attachments/assets/e7f7f999-4612-4920-9417-3cea91130b8f" />
 </div>
-<div align="center"><b>Figure 2: </b>ROC-Curve</div>
-<div align="center"><img width="400" alt="image" src="https://github.com/user-attachments/assets/161d38b0-e9ad-4491-957a-1c36d29eb5d0" />
+<div align="center"><b>Figure 1: </b>Confusion matrix for Naive Bayes</div>
+
+### Logistic Regression
+- Accuracy: 84.39
+- Precision: 83.74
+- Recall: 84.39
+- F1-Score: 83.94
+- AUC: 84.99
+<div align="center"><img width="400" alt="image" src="https://github.com/user-attachments/assets/0e3bb3e4-0c09-4dc8-9d8f-8d3d728e71dc" />
 </div>
-<div align="center"><b>Figure 3: </b>Confusion matrix 
+<div align="center"><b>Figure 2: </b>Confusion matrix for Logistic Regression</div>
+
+### Decision Tree
+- Accuracy: 78.10
+- Precision: 74.86
+- Recall: 78.10
+- F1-Score: 74.20
+- AUC: 72.03
+<div align="center"><img width="400" alt="image" src="https://github.com/user-attachments/assets/81c8e0ae-1357-4461-9b68-534c4567bafe" />
 </div>
+<div align="center"><b>Figure 3: </b>Confusion matrix for Decision Tree</div>
+
+### Random Forest
+- Accuracy: 76.81
+- Precision: 82.19
+- Recall: 76.81
+- F1-Score: 66.77
+- AUC: 83.16
+<div align="center"><img width="400" alt="image" src="https://github.com/user-attachments/assets/572db78f-82bd-4137-b674-b9a1677b8500" />
+</div>
+<div align="center"><b>Figure 3: </b>Confusion matrix for Random Forest</div>
